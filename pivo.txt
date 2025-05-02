@@ -1,0 +1,79 @@
+<!--
+        <section class="w-full items-center text-center grid justify-items-center mt-10">
+        <h2 id="inorect" class="text-4xl mb-16 font-bold"> Часто задаваемые вопросы </h2>
+            <button class="accordion">Почему именно мы должны вам дать курсы? <span class="arrow">▼</span></button>
+    <div class="panel">
+        <p > Потому что мы предлагаем качественное обучение и поддержку!</p>
+    </div>
+
+    <button class="accordion">Какие у вас преимущества? <span class="arrow">▼</span></button>
+    <div class="panel">
+        <p class="pb-5 pt-5">Опытные преподаватели, актуальная программа и удобный формат обучения.</p>
+    </div>
+
+    <button class="accordion">Какие у вас отзывы? <span class="arrow">▼</span></button>
+    <div class="panel">
+        <p class="pb-5 pt-5">Сотни довольных учеников, которые добились успеха после прохождения курса.</p>
+    </div>
+
+    <button class="accordion">Есть ли поддержка после курса? <span class="arrow">▼</span></button>
+    <div class="panel">
+        <p class="pb-5 pt-5">Да, мы предоставляем доступ в закрытое сообщество и помощь менторов.</p>
+    </div>
+
+    <button class="accordion">Какие результаты я получу? <span class="arrow">▼</span></button>
+    <div class="panel">
+        <p class="pb-5 pt-5">Практические навыки, реальный опыт и готовое портфолио для успешного старта.</p>
+    </div>
+        </section>
+          <div class="fixed bottom-8 right-36 bg-white p-4 rounded-lg shadow-xl border border-gray-200 z-50 max-w-xs animate-fade-in">
+                   <livewire:contact-form />
+            </div>
+            <button
+                @click="isOpen = true"
+                class="bg-indigo-800 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition-colors w-full">
+                Связаться
+            </button>
+        </div>
+    </div>
+
+        <section class="mt-12 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-4xl font-bold mb-6 w-full text-center">Отзывы покупателей</h2>
+
+            @if($comments->count() > 0)
+                <div class="space-y-4">
+                    @foreach($comments as $comment)
+                        <div class="border-b pb-4 last:border-b-0">
+                            <div class="flex items-center mb-2">
+                                <span class="font-semibold">{{ $comment->user->name }}</span>
+                                <span class="text-gray-500 text-sm ml-4">
+                                    {{ $comment->created_at->format('d.m.Y H:i') }}
+                                </span>
+                            </div>
+                            <p class="text-gray-700">{{ $comment->content }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="text-gray-500 text-center">Пока нет отзывов. Будьте первым!</p>
+            @endif
+            @auth
+                <form action="{{ route('comments.store') }}" method="POST" class="mt-8">
+                    @csrf
+                    <textarea name="content" rows="3"
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Оставьте ваш отзыв..." required></textarea>
+                    <button type="submit"
+                        class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Отправить отзыв
+                    </button>
+                </form>
+            @else
+                <p class="mt-4 text-gray-600 text-center">
+                    <a href="{{ route('login') }}" class="text-blue-600 hover:underline">Войдите</a>,
+                    чтобы оставить отзыв.
+                </p>
+            @endauth
+        </section>
+
+    -->

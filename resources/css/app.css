@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#scrollToTopBtn {
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+.accordion {
+    width: 80%;
+    max-width: 80%;
+    border: none;
+    background: #283593;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: left;
+    outline: none;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordion:hover {
+    background: #FB8C00;
+}
+.panel {
+    display: none;
+    padding: 15px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 80%;
+    text-align: center;
+}
+.arrow {
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+.accordion.active .arrow {
+    transform: rotate(-180deg);
+}
+#cookieConsent {
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
