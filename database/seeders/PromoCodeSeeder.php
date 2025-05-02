@@ -1,8 +1,8 @@
 <?php
 
+namespace Database\Seeders;
 use App\Models\PromoCode;
 use Illuminate\Database\Seeder;
-
 class PromoCodeSeeder extends Seeder
 {
     public function run()
